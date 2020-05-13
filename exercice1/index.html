@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+    <title>js -partie 9 - Exercice 1</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        form li {
+            list-style: none;
+        }
+        form input {
+            text-align: center;
+            font-size: 12px;
+            margin-bottom: 10px;
+            border-radius: 9px;
+            width: 200px;
+            height: 60px;
+        }
+        form div p {
+            color: #374af2;
+        }
+    </style>
+  </head>
+  <body>
+    <!--A l'aide de la librairie cleave.js, créer un formulaire de paiement. Ajouter un champ nom et un champ prénom, un champ numéro de téléphone, un champ date de commande et un champ carte bancaire.-->
+    <form>
+        <h1>Vos informations</h1>
+        <div>
+          <label for="name"></label>
+          <input type="text" name="name" id="name" placeholder="Entrer votre nom">
+        </div>
+        <div>
+            <label for="firstName"></label>
+            <input type="text" name="firstName" id="firstName" placeholder="Entrer votre prénom">
+        </div>
+        <div>
+            <label for="phoneNumber"></label>
+            <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Entrer votre numéro de telephone" class="input-tel">
+        </div>
+        <h1>Date de la commande</h1>
+        <div>
+            <label for="orderDate"></label>
+            <input type="tel" name="orderDate" id="orderDate" placeholder="JJ-MM-AAAA" class="orderDate">
+        </div>
+        <h1>Paiement</h1>
+        <h1>Numéro de carte</h1>
+        <div>
+            <label for="cardNumber"></label>
+            <input type="tel" name="cardNumber" id="cardNumber" placeholder="Carte number" class="input-cardNumber">
+            <p id="typeCard"></p>
+        </div>
+        <h1>Date de validité :</h1>
+        <div>
+            <label for="validity"></label>
+            <input type="tel" name="validity" id="validity" placeholder="MM-AA" class="input-cardValidity">
+        </div>
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.10/cleave.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.10/addons/cleave-phone.fr.js"></script>
+    <script>
+        var cleave = new Cleave('.input-tel', {
+            phone: true,
+            phoneRegionCode: 'FR'
+        });
+        var cleave = new Cleave('.orderDate', {
+            date: true,
+            delimiter: '-',
+            datePattern: ['d', 'm', 'Y']
+        });
+        var cleave = new Cleave('.input-cardNumber', {
+            creditCard: true,
+            onCreditCardTypeChanged: function (type) {
+                console.log(type);
+                document.getElementById('typeCard').innerHTML = 'type de carte : ' + type;
+            }
+        });
+        var cleave = new Cleave('.input-cardValidity', {
+            date: true,
+            datePattern: ['m', 'y']
+        });
+    </script>
+  </body>
+</html>

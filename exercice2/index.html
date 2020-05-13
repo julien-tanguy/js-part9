@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>js -partie 9 - Exercice 2</title>
+    <style>
+      [data-inline-tweet] a {
+      text-decoration: none;
+      color: #000;
+    }
+    [data-inline-tweet] a span {
+      border-bottom: 1px dotted rgb(0,172,237);
+      font-style: italic;
+      margin-right: 10px;
+    }
+    [data-inline-tweet] a:hover span {
+      background-color: rgba(0,172,237,0.1);
+      color: rgb(0,172,237);
+    }
+    </style>
+  </head>
+  <body>
+    <!--A l'aide de la librairie InlineTweet.js, créer des phrases tweetables à partir du fichier html fourni.-->
+    <h1>Le vampire</h1>
+    <p>
+      <span data-inline-tweet>Toi qui, comme un coup de couteau,</span><br />
+      Dans mon coeur plaintif es entrée ;<br />
+      Toi qui, forte comme un troupeau<br />
+      De démons, vins, folle et parée,
+      </p>
+      <p>
+      De mon esprit humilié<br />
+      Faire ton lit et ton domaine ;<br />
+      - Infâme à qui je suis lié<br />
+      Comme le forçat à la chaîne,
+      </p>
+      <p>
+      Comme au jeu le joueur têtu,<br />
+      <span data-inline-tweet>Comme à la bouteille l'ivrogne,</span><br />
+      Comme aux vermines la charogne,<br />
+      - Maudite, maudite sois-tu !
+      </p>
+      <p>
+      <span data-inline-tweet data-inline-tweet-url="test.fr">J'ai prié le glaive rapide</span><br />
+      De conquérir ma liberté,<br />
+      Et j'ai dit au poison perfide<br />
+      De secourir ma lâcheté.
+      </p>
+      <p>
+      <span data-inline-tweet data-inline-tweet-via="idTwitter">Hélas ! le poison et le glaive</span><br />
+      M'ont pris en dédain et m'ont dit :<br />
+      "Tu n'es pas digne qu'on t'enlève<br />
+      A ton esclavage maudit,
+      </p>
+      <p>
+      <span data-inline-tweet data-inline-tweet-via="idTwitter" data-inline-tweet-tags="exercice 2,imbecile,vampire">Imbécile ! - de son empire</span><br />
+      Si nos efforts te délivraient,<br />
+      Tes baisers ressusciteraient<br />
+      Le cadavre de ton vampire ! "
+      </p>
+      <script src="js/main.js"></script>
+  </body>
+</html>
